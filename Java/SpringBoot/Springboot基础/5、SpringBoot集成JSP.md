@@ -1,4 +1,4 @@
-### $\textcolor{ProcessBlue}{Spring Boot 集成JSP} $
+### Spring Boot 集成JSP
 
 >**一、**在 pom.xml 文件中配置以下依赖项
 

@@ -1,10 +1,10 @@
-### $\textcolor{ProcessBlue}{一、Redis集成简介} $
+### 一、Redis集成简介
 
 ​		Redis是我们Java开发中，使用频次非常高的一个nosql数据库，数据以key-value键值对的形式存储在内存中。redis的常用使用场景，可以做缓存，分布式锁，自增序列等，使用redis的方式和我们使用数据库的方式差不多，首先我们要在自己的本机电脑或者服务器上安装一个redis的服务器，通过我们的java客户端在程序中进行集成，然后通过客户端完成对redis的增删改查操作。redis的Java客户端类型还是很多的，常见的有jedis, redission,lettuce等，所以我们在集成的时候，我们可以选择直接集成这些原生客户端。但是在springBoot中更常见的方式是集成spring-data-redis，这是spring提供的一个专门用来操作redis的项目，封装了对redis的常用操作，里边主要封装了jedis和lettuce两个客户端。相当于是在他们的基础上加了一层门面。
 
 本篇文章我们就来重点介绍，springBoot通过集成spring-data-redis使用对于redis的常用操作。
 
-### $\textcolor{ProcessBlue}{二、集成步骤} $
+### 二、集成步骤
 
 >2.1 添加依赖
 
@@ -170,7 +170,7 @@ public class RedisController {
 }
 ```
 
-### $\textcolor{ProcessBlue}{三、讲讲序列化} $
+### 三、讲讲序列化
 
 ​		redis的序列化也是我们在使用RedisTemplate的过程中需要注意的事情。上面的案例中，其实我们并没有特殊设置redis的序列化方式，那么它其实使用的是默认的序列化方式。RedisTemplate这个类的泛型是,也就是他是支持写入Object对象的，那么这个对象采取什么方式序列化存入内存中就是它的序列化方式。
 

@@ -1,8 +1,8 @@
-$\textcolor{ProcessBlue}{一、Spring Boot 简介 } $
+### 一、Spring Boot 简介
 
 ​		Spring Boot 是 Spring 家族中的一个全新的框架，它用来简化 Spring 应用程序的创建和 开发过程，也可以说 Spring Boot 能简化我们之前采用 SpringMVC + Spring + MyBatis 框架进行 开发的过程。 在以往我们采用 SpringMVC + Spring + MyBatis 框架进行开发的时候，搭建和整合三大框 架，我们需要做很多工作，比如配置 web.xml，配置 Spring，配置 MyBatis，并将它们整合在 一起等，而 Spring Boot 框架对此开发过程进行了革命性的颠覆，完全抛弃了繁琐的 xml 配 置过程，采用大量的默认配置简化我们的开发过程。 所以采用 Spring Boot 可以非常容易和快速地创建基于 Spring 框架的应用程序，它让编 码变简单了，配置变简单了，部署变简单了，监控变简单了。正因为 Spring Boot 它化繁为 简，让开发变得极其简单和快速，所以在业界备受关注。
 
-### $\textcolor{ProcessBlue}{二、Spring Boot 的特性} $
+### 二、Spring Boot 的特性
 
  ➢ 能够快速创建基于 Spring 的应用程序 
 
@@ -14,7 +14,7 @@ $\textcolor{ProcessBlue}{一、Spring Boot 简介 } $
 
  ➢ 提供了程序的健康检查等功能 ➢ 基本可以完全不使用 XML 配置文件，采用注解配置
 
-### $\textcolor{ProcessBlue}{三、开发步骤} $
+### 三、开发步骤
 
 >（1） 创建一个 Module，选择类型为 Spring Initializr 快速构建
 
@@ -125,7 +125,7 @@ application.properties/application.yml 用于存放程序的各种依赖模块�
 
 ➢ Application.java：SpringBoot 程序执行的入口，执行该程序中的 main 方法，SpringBoot 就启动了
 
-$\textcolor{OrangeRed}{启动 SpringBoot 框架，SpringBoot会启动一个内嵌的 tomcat}$
+启动 SpringBoot 框架，SpringBoot会启动一个内嵌的 tomcat
 
 >（9） SpringBoot 项目分析
 
@@ -139,15 +139,15 @@ $\textcolor{OrangeRed}{启动 SpringBoot 框架，SpringBoot会启动一个内�
 
 ➢ @Controller 及 @ResponseBody 依然是我们之前的 Spring MVC，因为 Spring Boot 的里面依然是使用我们的 Spring MVC + Spring + MyBatis 等框架
 
-### $\textcolor{ProcessBlue}{三、Spring Boot 的核心配置文件} $
+### 四、Spring Boot 的核心配置文件
 
 Spring Boot 的核心配置文件用于配置 Spring Boot 程序，名字必须以 application 开始
 
-### $\textcolor{ProcessBlue}{四、yml文件} $
+### 五、yml文件
 
 yml 是一种 yaml 格式的配置文件，主要采用一定的空格、换行等格式排版进行配置。 yaml 是一种直观的能够被计算机识别的的数据序列化格式，容易被人类阅读，yaml 类 似于 xml，但是语法比 xml 简洁很多，值与前面的冒号配置项必须要有一个空格， yml 后 缀也可以使用 yaml 后缀
 
-### $\textcolor{ProcessBlue}{五、了解自动配置原理} $
+### 六、了解自动配置原理
 
 >**1.1、依赖管理**
 

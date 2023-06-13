@@ -1,4 +1,4 @@
-## $\textcolor{ProcessBlue}{SpringBoot-API文档化 Swagger2} $
+### SpringBoot-API文档化 Swagger2
 
 >一、maven配置
 

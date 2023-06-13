@@ -1,4 +1,4 @@
-### $\textcolor{ProcessBlue}{一、回顾 SpringMVC 使用拦截器步骤} $
+### 一、回顾 SpringMVC 使用拦截器步骤
 
 >1、自定义拦截器类，实现 HandlerInterceptor 接口 
 
@@ -30,7 +30,7 @@ public class UserInterceptor implements HandlerInterceptor {
 
 ![image-20221130100611385](./assets/image-20221130100611385.png)
 
-### $\textcolor{ProcessBlue}{二、Spring Boot 使用拦截器步骤} $
+### 二、Spring Boot 使用拦截器步骤
 
 >1、自定义拦截器类，实现 HandlerInterceptor 接口 ，并加入Spring容器中（@Component）
 

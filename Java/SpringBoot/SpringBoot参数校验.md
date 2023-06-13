@@ -1,4 +1,4 @@
-## $\textcolor{ProcessBlue}{Spring Validation各种场景下的最佳实践及其实现原理} $
+### Spring Validation各种场景下的最佳实践及其实现原理
 
 项目源码：https://github.com/chentianming11/spring-validation
 
@@ -10,7 +10,7 @@ Spring Validation是对hibernate validation的二次封装，用于支持spring 
 
 
 
-### $\textcolor{ProcessBlue}{引入依赖} $
+### 引入依赖
 
 如果spring-boot版本小于2.3.x，spring-boot-starter-web会自动传入hibernate-validator依赖。如果spring-boot版本大于2.3.x，则需要手动引入依赖：
 
@@ -29,7 +29,7 @@ Spring Validation是对hibernate validation的二次封装，用于支持spring 
 
 
 
-### $\textcolor{ProcessBlue}{requestBody参数校验} $
+### requestBody参数校验
 
 POST、PUT请求一般会使用requestBody传递参数，这种情况下，后端使用DTO对象进行接收。只要给DTO对象加上@Validated注解就能实现自动参数校验。比如，有一个保存User的接口，要求userName长度是2-10，account和password字段长度是6-20。
 
@@ -74,7 +74,7 @@ public Result saveUser(@RequestBody @Validated UserDTO userDTO) {
 
 
 
-### $\textcolor{ProcessBlue}{requestParam/PathVariable参数校验} $
+### requestParam/PathVariable参数校验
 
 GET请求一般会使用requestParam/PathVariable传参。如果参数比较多(比如超过6个)，还是推荐使用DTO对象接收。
 
@@ -113,7 +113,7 @@ public class UserController {
 }
 ```
 
-### $\textcolor{ProcessBlue}{统一异常处理} $
+### 统一异常处理
 
 前面说过，如果校验失败，会抛出MethodArgumentNotValidException或者ConstraintViolationException异常。在实际项目开发中，通常会用统一异常处理来返回一个更友好的提示。
 
@@ -147,7 +147,7 @@ public class CommonExceptionHandler {
 
 >### 进阶使用
 
-### $\textcolor{ProcessBlue}{分组校验} $
+### 分组校验
 
 在实际项目中，可能多个方法需要使用同一个DTO类来接收参数，而不同方法的校验规则很可能是不一样的。这个时候，简单地在DTO类的字段上加约束注解无法解决这个问题。因此，spring-validation支持了分组校验的功能，专门用来解决这类问题。
 
@@ -204,7 +204,7 @@ public Result updateUser(@RequestBody @Validated(UserDTO.Update.class) UserDTO u
 }
 ```
 
-### $\textcolor{ProcessBlue}{嵌套校验} $
+### 嵌套校验
 
 前面的示例中，DTO类里面的字段都是基本数据类型和String类型。但是实际场景中，有可能某个字段也是一个对象，这种情况先，可以使用嵌套校验。
 
@@ -264,7 +264,7 @@ public class UserDTO {
 
 嵌套校验可以结合分组校验一起使用。还有就是嵌套集合校验会对集合里面的每一项都进行校验，例如`List<Job>`字段会对这个list里面的每一个Job对象都进行校验
 
-### $\textcolor{ProcessBlue}{集合校验} $
+### 集合校验
 
 如果请求体直接传递了json数组给后台，并希望对数组中的每一项都进行参数校验。此时，如果我们直接使用java.util.Collection下的list或者set来接收数据，参数校验并不会生效！我们可以使用自定义list集合来接收参数：
 
@@ -297,7 +297,7 @@ public Result saveList(@RequestBody @Validated(UserDTO.Save.class) ValidationLis
 }
 ```
 
-### $\textcolor{ProcessBlue}{自定义校验} $
+### 自定义校验
 
 业务需求总是比框架提供的这些简单校验要复杂的多，我们可以自定义校验来满足我们的需求。
 
@@ -344,7 +344,7 @@ public class EncryptIdValidator implements ConstraintValidator<EncryptId, String
 
 这样我们就可以使用@EncryptId进行参数校验了！
 
-### $\textcolor{ProcessBlue}{编程式校验} $
+### 编程式校验
 
 上面的示例都是基于注解来实现自动校验的，在某些情况下，我们可能希望以编程方式调用验证。这个时候可以注入javax.validation.Validator对象，然后再调用其api。
 
@@ -370,7 +370,7 @@ public Result saveWithCodingValidate(@RequestBody UserDTO userDTO) {
 }
 ```
 
-### $\textcolor{ProcessBlue}{快速失败(Fail Fast)} $
+### 快速失败(Fail Fast)
 
 Spring Validation默认会校验完所有字段，然后才抛出异常。可以通过一些简单的配置，开启Fali Fast模式，一旦校验失败就立即返回。
 
@@ -386,13 +386,13 @@ public Validator validator() {
 }
 ```
 
-### $\textcolor{ProcessBlue}{Valid和Validated区别} $
+### Valid和Validated区别
 
 ![图片](./assets/640.jpeg)
 
 >### 实现原理
 
-### $\textcolor{ProcessBlue}{requestBody参数校验实现原理} $
+### requestBody参数校验实现原理
 
 在spring-mvc中，RequestResponseBodyMethodProcessor是用于解析@RequestBody标注的参数以及处理@ResponseBody标注方法的返回值的。显然，执行参数校验的逻辑肯定就在解析参数的方法resolveArgument()中：
 
@@ -462,7 +462,7 @@ public void validate(Object target, Errors errors, Object... validationHints) {
 
 最终发现底层最终还是调用了Hibernate Validator进行真正的校验处理。
 
-### $\textcolor{ProcessBlue}{方法级别的参数校验实现原理} $
+### 方法级别的参数校验实现原理
 
 上面提到的将参数一个个平铺到方法参数中，然后在每个参数前面声明约束注解的校验方式，就是方法级别的参数校验。
 

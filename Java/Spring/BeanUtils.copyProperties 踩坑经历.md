@@ -1,4 +1,4 @@
-### $\textcolor{ProcessBlue}{使用 BeanUtils.copyProperties 踩坑经历} $
+### 使用 BeanUtils.copyProperties 踩坑经历
 
 >1. 原始转换
 

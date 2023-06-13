@@ -1,4 +1,4 @@
-### $\textcolor{ProcessBlue}{一、Spring能做什么} $
+### 一、Spring能做什么
 
 >1.1、Spring的能力
 
@@ -22,7 +22,7 @@ web开发		数据访问		安全控制		分布式		消息服务		移动开发	批
 
 基于Java8的一些新特性，如：接口默认实现。重新设计源码架构。
 
-### $\textcolor{ProcessBlue}{二、为什么用SpringBoot} $
+### 二、为什么用SpringBoot
 
 Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
 
@@ -65,7 +65,7 @@ Spring Boot makes it easy to create stand-alone, production-grade Spring based A
 - 人称版本帝，迭代快，需要时刻关注变化
 - 封装太深，内部原理复杂，不容易精通
 
-### $\textcolor{ProcessBlue}{三、时代背景} $
+### 三、时代背景
 
 >3.1、微服务
 
@@ -103,14 +103,20 @@ Spring Boot makes it easy to create stand-alone, production-grade Spring based A
 **上云的困难**
 
 - 服务自愈
+
 - 弹性伸缩
+
 - 服务隔离
+
 - 自动化部署
+
 - 灰度发布
+
 - 流量治理
+
 - ......
 
-### $\textcolor{ProcessBlue}{四、如何学习SpringBoot} $
+    ### 四、如何学习SpringBoot
 
 <img src="./assets/image-20221130092958420.png" alt="image-20221130092958420" style="zoom: 50%;" />
 
